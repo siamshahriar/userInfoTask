@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Notfound = () => {
+const Usernotfound = () => {
   return (
     <section className="">
       <div className="container flex items-center min-h-[75vh] px-6 py-12 mx-auto">
@@ -23,7 +23,7 @@ const Notfound = () => {
             </svg>
           </p>
           <h1 className="mt-3 text-2xl font-semibold text-white md:text-3xl">
-            Page not found
+            User not found
           </h1>
           <p className="mt-4 text-gray-500 dark:text-gray-400">
             The page you are looking for doesn't exist. Here are some helpful
@@ -65,4 +65,4 @@ const Notfound = () => {
   );
 };
 
-export default Notfound;
+export default Usernotfound;

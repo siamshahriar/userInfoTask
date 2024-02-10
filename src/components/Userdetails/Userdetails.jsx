@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Usernotfound from "../Error404/Usernotfound";
 
 const Userdetails = () => {
   const location = useLocation();
@@ -30,16 +31,7 @@ const Userdetails = () => {
   // console.log(userDetails, errorMessage, loading);
 
   if (errorMessage) {
-    return (
-      <div className="flex flex-col gap-5 justify-center items-center h-[80vh] p-6">
-        <h1 className="text-4xl text-red-500">User doesn`t exist</h1>
-        <div>
-          <Link to="/" className="btn btn-outline">
-            Back to Home
-          </Link>
-        </div>
-      </div>
-    );
+    return <Usernotfound></Usernotfound>;
   }
   return (
     <>
