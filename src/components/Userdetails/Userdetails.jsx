@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Userdetails = () => {
   const location = useLocation();
@@ -31,8 +31,13 @@ const Userdetails = () => {
 
   if (errorMessage) {
     return (
-      <div className="flex justify-center items-center h-[80vh] p-6">
-        <h1 className="text-4xl text-red-500">{errorMessage}</h1>
+      <div className="flex flex-col gap-5 justify-center items-center h-[80vh] p-6">
+        <h1 className="text-4xl text-red-500">User doesn`t exist</h1>
+        <div>
+          <Link to="/" className="btn btn-outline">
+            Back to Home
+          </Link>
+        </div>
       </div>
     );
   }
@@ -43,7 +48,7 @@ const Userdetails = () => {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className=" min-h-[300px] md:min-h-[500px] flex justify-center items-center mx-5 md:m-0 mt-5">
+        <div className=" min-h-[300px] md:min-h-[70vh] flex flex-col gap-5 justify-center items-center mx-5 md:m-0 mt-10">
           <div className="card flex lg:flex-row gap-5 justify-between md:justify-evenly shadow-2xl p-5  md:max-w-full lg:w-2/3 lg:py-16 bg-violet-900 ">
             <figure className="md:px-10 md:py-5">
               <img
@@ -75,6 +80,11 @@ const Userdetails = () => {
                 </span>
               </div>
             </div>
+          </div>
+          <div>
+            <Link to="/" className="btn btn-outline">
+              Back to Home
+            </Link>
           </div>
         </div>
       )}
