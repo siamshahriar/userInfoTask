@@ -7,32 +7,35 @@ const Userdetails = () => {
 
   const [userDetails, setUserDetaiils] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // console.log(userDetails);
-
-  if (!loading) {
-    const { firstName, lastName, email, company, address, image, id } =
-      userDetails;
-
-    const { name } = company;
-
-    const { city, state } = address;
-  }
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(`https://dummyjson.com/users/${path}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch user details");
+        }
         const data = await response.json();
-        setUserDetaiils(data);
         setLoading(false);
+        setUserDetaiils(data);
       } catch (error) {
-        console.log(error);
+        setErrorMessage(error.message);
+        // console.log(error.message);
       }
     };
     fetchData();
   }, [path]);
 
+  console.log(userDetails, errorMessage, loading);
+
+  if (errorMessage) {
+    return (
+      <div className="flex justify-center items-center h-[80vh] p-6">
+        <h1 className="text-4xl text-red-500">{errorMessage}</h1>
+      </div>
+    );
+  }
   return (
     <>
       {loading ? (
@@ -40,8 +43,8 @@ const Userdetails = () => {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className=" min-h-[300px] md:min-h-[500px] flex justify-center items-center mx-5 md:m-0">
-          <div className="card lg:flex flex-row gap-5 justify-between md:justify-evenly  bg-base-300 shadow-xl p-5  md:max-w-full lg:w-2/3 lg:py-16 ">
+        <div className=" min-h-[300px] md:min-h-[500px] flex justify-center items-center mx-5 md:m-0 mt-5">
+          <div className="card flex lg:flex-row gap-5 justify-between md:justify-evenly shadow-2xl p-5  md:max-w-full lg:w-2/3 lg:py-16 bg-violet-900 ">
             <figure className="md:px-10 md:py-5">
               <img
                 src={userDetails.image}

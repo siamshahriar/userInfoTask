@@ -103,7 +103,7 @@ const Home = () => {
   };
 
   return (
-    <div className="mx-10">
+    <div className="mx-10 ">
       <div>
         <div className="flex items-center justify-center my-10 gap-6 ">
           <input
@@ -137,10 +137,10 @@ const Home = () => {
             id="my_modal_5"
             className="modal modal-bottom sm:modal-middle"
           >
-            <div className="modal-box">
+            <div className="modal-box bg-violet-900">
               <p className="pt-4 text-xl font-semibold">Add New User</p>
-              <div className="modal-action flex flex-col">
-                <div className="card shrink-0 w-full  bg-base-100">
+              <div className="modal-action flex flex-col ">
+                <div className="card shrink-0 w-full  ">
                   <form
                     method="dialog"
                     onSubmit={handleSubmit(onSubmit)}

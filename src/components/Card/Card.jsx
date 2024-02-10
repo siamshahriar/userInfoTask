@@ -8,7 +8,7 @@ const Card = ({ user }) => {
   //   console.log(userAddress);
 
   return (
-    <div className="card bg-base-300 shadow-xl p-5">
+    <div className="card bg-gradient-to-br from-slate-900 to-violet-900 p-5">
       <figure className="px-10 py-5">
         <img src={image} alt="Shoes" className="rounded-full h-20 w-20" />
       </figure>
