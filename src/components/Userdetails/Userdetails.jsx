@@ -27,7 +27,7 @@ const Userdetails = () => {
     fetchData();
   }, [path]);
 
-  console.log(userDetails, errorMessage, loading);
+  // console.log(userDetails, errorMessage, loading);
 
   if (errorMessage) {
     return (
@@ -49,7 +49,7 @@ const Userdetails = () => {
         </div>
       ) : (
         <div className=" min-h-[300px] md:min-h-[70vh] flex flex-col gap-5 justify-center items-center mx-5 md:m-0 mt-10">
-          <div className="card flex lg:flex-row gap-5 justify-between md:justify-evenly shadow-2xl p-5  md:max-w-full lg:w-2/3 lg:py-16 bg-violet-900 ">
+          <div className="card flex lg:flex-row gap-5 justify-between md:justify-evenly shadow-2xl p-5  md:max-w-full lg:w-2/3 lg:py-16 bg-gradient-to-b from-slate-700 to-slate-900 border-2 border-gray-700">
             <figure className="md:px-10 md:py-5">
               <img
                 src={userDetails.image}

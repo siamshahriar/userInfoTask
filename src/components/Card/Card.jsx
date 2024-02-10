@@ -8,7 +8,7 @@ const Card = ({ user }) => {
   //   console.log(userAddress);
 
   return (
-    <div className="card bg-gradient-to-r from-slate-900 to-violet-900 p-5">
+    <div className="card lg:max-w-[350px] bg-gradient-to-b from-slate-700 to-slate-900 border-2 border-gray-700  p-5">
       <figure className="px-10 py-5">
         <img src={image} alt="Shoes" className="rounded-full h-20 w-20" />
       </figure>
@@ -34,7 +34,7 @@ const Card = ({ user }) => {
         </div>
 
         <div className="my-6">
-          <Link to={`/details/${id}`} className="btn btn-primary">
+          <Link to={`/details/${id}`} className="btn btn-info">
             View Details
           </Link>
         </div>

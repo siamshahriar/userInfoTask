@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import AddUserForm from "../AddUserForm/AddUserForm";
 
 const Home = () => {
   const [originalUsers, setOriginalUsers] = useState([]);
@@ -128,7 +129,7 @@ const Home = () => {
         <div className="text-center">
           {/* Open the modal using document.getElementById('ID').showModal() method */}
           <button
-            className="btn btn-info"
+            className="btn btn-primary"
             onClick={() => document.getElementById("my_modal_5").showModal()}
           >
             Add User
@@ -140,7 +141,7 @@ const Home = () => {
             <div className="modal-box bg-violet-900">
               <p className="pt-4 text-xl font-semibold">Add New User</p>
               <div className="modal-action flex flex-col ">
-                <div className="card shrink-0 w-full  ">
+                {/* <div className="card shrink-0 w-full  ">
                   <form
                     method="dialog"
                     onSubmit={handleSubmit(onSubmit)}
@@ -241,10 +242,14 @@ const Home = () => {
                       </button>
                     </div>
                   </form>
-                </div>
+                </div> */}
+                <AddUserForm
+                  onSubmit={onSubmit}
+                  handleSubmit={handleSubmit}
+                  register={register}
+                ></AddUserForm>
 
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
                   <button className="btn">Close</button>
                 </form>
               </div>

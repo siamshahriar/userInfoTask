@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="sticky top-full ">
-      <footer className="footer footer-center p-4 bg-slate-900 text-base-content">
+      <footer className="footer footer-center p-4  text-base-content">
         <aside className="flex gap-3">
           <Link to="https://github.com/siamshahriar">
             <FaGithub></FaGithub>
