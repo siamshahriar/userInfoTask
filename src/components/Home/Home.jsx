@@ -103,9 +103,9 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="mx-10">
       <div>
-        <div className="flex items-center justify-center my-10 gap-6">
+        <div className="flex items-center justify-center my-10 gap-6 ">
           <input
             onChange={handleInputChange}
             type="text"
@@ -114,7 +114,7 @@ const Home = () => {
           />
           <select
             onChange={handleSort}
-            className="select select-primary max-w-xs"
+            className="select select-primary max-w-28"
           >
             <option defaultValue>Sort by Default</option>
             <option value="nameAZ">Sort by name A-Z</option>
@@ -128,7 +128,7 @@ const Home = () => {
         <div className="text-center">
           {/* Open the modal using document.getElementById('ID').showModal() method */}
           <button
-            className="btn"
+            className="btn btn-info"
             onClick={() => document.getElementById("my_modal_5").showModal()}
           >
             Add User
@@ -258,14 +258,14 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <div className="grid gap-5 my-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+          <div className="grid gap-5 my-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 ">
             {users.map((user) => (
               <Card key={user.id} user={user}></Card>
             ))}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

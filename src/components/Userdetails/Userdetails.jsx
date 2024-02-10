@@ -40,27 +40,37 @@ const Userdetails = () => {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className="flex justify-center items-center lg:mt-20">
-          <div className="card bg-base-100 shadow-xl lg:w-[30%]">
-            <figure className="px-10 pt-10 ">
+        <div className=" min-h-[300px] md:min-h-[500px] flex justify-center items-center mx-5 md:m-0">
+          <div className="card lg:flex flex-row gap-5 justify-between md:justify-evenly  bg-base-300 shadow-xl p-5  md:max-w-full lg:w-2/3 lg:py-16 ">
+            <figure className="md:px-10 md:py-5">
               <img
                 src={userDetails.image}
                 alt="Shoes"
-                className="rounded-full h-20 w-20"
+                className="rounded-full h-20 w-20 md:h-36 md:w-36"
               />
             </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">
-                First Name: {userDetails.firstName}
-              </h2>
-              <h2 className="card-title">Last Name: {userDetails.lastName}</h2>
-              <p>Email: {userDetails.email}</p>
-              <p>Company Name: {userDetails.company?.name}</p>
-              <p>Address: {userDetails.address?.address} </p>
-              <p>
-                City: {userDetails.address?.city}, State:{" "}
-                {userDetails.address?.state}
+            <div className=" items-center text-center">
+              <div className="mb-1">
+                <p className="text-2xl font-serif">
+                  {userDetails.firstName} {userDetails.lastName}
+                </p>
+              </div>
+              <p className="font-mono  my-5 mb-8">
+                <span className="bg-cyan-900 p-2 rounded-lg text-white">
+                  {userDetails.company?.name}
+                </span>
               </p>
+              <div className="bg-slate-950 rounded-lg py-5 mb-2 md:mb-4 flex justify-between px-4 text-sm">
+                <span className="">Email:</span>
+                <span className="">{userDetails.email}</span>
+              </div>
+              <div className="bg-slate-950 h-20 rounded-lg py-2 md:py-3  text-sm flex justify-between px-4">
+                <span className="">Address:</span>
+                <span className="text-end">
+                  {userDetails.address?.address},<br></br>
+                  {userDetails.address?.city},{userDetails.address?.state}
+                </span>
+              </div>
             </div>
           </div>
         </div>
